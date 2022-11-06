@@ -1,6 +1,6 @@
-const { response } = require('express');
-const fileUpload = require("express-fileUpload")
+//const { response } = require('express');
 const express = require('express')
+const fileUpload = require("express-fileUpload")
 const app = express()
 const port = 3000
 
@@ -17,6 +17,11 @@ app.use(fileUpload())
 app.get('/', (req, res) => {
   res.sendFile(path.join(`${__dirname}/../frontend/index.html`))
 })
+
+app.get('/about', (req, res) => {
+    res.send("Hello")
+})
+
 
 app.use("/public", express.static(`${__dirname}/../frontend/public`))
 

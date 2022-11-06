@@ -8,7 +8,7 @@ form.addEventListener("submit", function(event){
     };
 
     const formData = new formData();
-    formData.append("fileName", document.querySelector("#file-name".value))
+    formData.append("fileName", document.querySelector("#file-name").value)
     formData.append("file", document.querySelector("#file").files[0]) // files array-t ad vissza, még ha egy elem is található benne
 
     fetch("/upload", {
